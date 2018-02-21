@@ -13,6 +13,9 @@
 
 Route::get('/', 'LoginController@index');
 Route::get('admin', 'AdminController@index');
+Route::get('admin/permintaan', 'AdminController@permintaan');
+Route::get('admin/mobil', 'AdminController@mobil');
+Route::get('admin/log', 'AdminController@log');
 Route::get('member', 'MemberController@index');
 Route::post('member', 'MemberController@store');
 Route::get('member/order', 'MemberController@order');

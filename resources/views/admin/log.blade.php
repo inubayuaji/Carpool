@@ -2,13 +2,13 @@
 <head>
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
   <title>Uji coba</title>
-  <!--<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>-->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
   <div class="aside">
     <a href="#" class="aside-banner">Carpool</a>
       <ul class="nav-aside">
-        <li><a href="#">List Peminta</a></li>
+        <li><a href="#">List Pemintaan</a></li>
         <li><a href="#">List Mobil</a></li>
         <li><a href="#">Log Permintaan</a></li>
       </ul>
@@ -23,7 +23,23 @@
     </div>
   </div>
   <div class="container mg-l-230">
-    Kojgas
+    <h1>Log</h1>
+    <table>
+      <tr>
+        <th>Peminjam</th>
+        <th>Pemberi Ijin</th>
+        <th>Berangkat</th>
+        <th>Pulang</th>
+      </tr>
+      @foreach ($logs as $log)
+        <tr>
+          <td>{{$log->request_name}}</td>
+          <td>{{$log->supervisior_name}}</td>
+          <td>{{$log->tgl_pergi}}</td>
+          <td>{{$log->tgl_pulang}}</td>
+        </tr>
+      @endforeach
+    </table>
   </div>
   <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 </body>
