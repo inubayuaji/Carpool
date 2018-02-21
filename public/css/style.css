@@ -6,15 +6,33 @@ body{
   font-family: Verdana, serif;
   font-size: 14px;
 }
+h1 { font-size: 24px;}
+h2 { font-size: 22px;}
+h3 { font-size: 18px;}
+h4 { font-size: 16px;}
+h5 { font-size: 12px;}
+h6 { font-size: 10px;}
 h1, form{
   display: block;
 }
-h1{
+h1, h2, h3, h4, h5, h6{
   margin: 0;
 }
 a{
   text-decoration: none;
 }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
 intup, textarea::placeholder{
   font-size: 14px;
   font-family: Verdana, sans-serif;
@@ -80,7 +98,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus{
   border: solid 1px #da251d;
   box-shadow: 0px 0px 8px #da251d;
 }
-button.btn-red{
+input[type="submit"].btn-red{
   height: 35px;
   background: #da251d;
   border: none;
@@ -88,7 +106,15 @@ button.btn-red{
   font-size: 17px;
   color: #ffffff;
 }
-button:hover{
+btn-green{
+  height: 35px;
+  background: #4ebc3a;
+  border: none;
+  border-radius: 2px;
+  font-size: 17px;
+  color: #ffffff;
+}
+.btn-red:hover{
   background: #838281;
 }
 a:hover{

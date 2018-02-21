@@ -11,8 +11,6 @@
       <input type="text" placeholder="NIP" class="mg-t-10 w-350p"></input>
       <input type="password" placeholder="Password" class="mg-t-10 w-350p"></input>
       <button class="btn-red mg-t-10">Log In</button>
-      <p class="mg-0"><a href="#">Lupa password</a></p>
     </form>
-
 </body>
 </html>

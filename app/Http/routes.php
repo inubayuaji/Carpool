@@ -14,3 +14,10 @@
 Route::get('/', 'LoginController@index');
 Route::get('admin', 'AdminController@index');
 Route::get('member', 'MemberController@index');
+Route::post('member', 'MemberController@store');
+Route::get('member/order', 'MemberController@order');
+Route::get('member/mobil', 'MemberController@mobil');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
