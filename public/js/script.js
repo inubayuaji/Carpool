@@ -1,16 +1,33 @@
 //make toggle
 function toggleNotif(){
+  document.getElementById('notif').classList.toggle('cliked');
   document.getElementById('notif-list').classList.toggle('show');
 }
 function toggleUser(){
+  document.getElementById('user').classList.toggle('cliked');
   document.getElementById('user-list').classList.toggle('show');
+}
+window.onclick = function(event){
+  if(!event.target.matches('#notif')){
+    document.getElementById('notif').classList.remove('cliked');
+    document.getElementById('notif-list').classList.remove('show');
+  }
+  if(!event.target.matches('#user')){
+    document.getElementById('user').classList.remove('cliked');
+    document.getElementById('user-list').classList.remove('show');
+  }
+}
+function toggleNav(){
+  document.getElementById('aside').classList.toggle('show');
+  document.getElementById('navbar').classList.toggle('full');
+  document.getElementById('container').classList.toggle('full');
 }
 //Make datepicker
 var d1 = datepicker('#berangkat');
 var d2 = datepicker('#pulang');
-//Inital Map
+//Inital Mapvar place1;
 var place1;
-var place2;
+var palce2;
 function initMap(){
   var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -19,8 +36,8 @@ function initMap(){
   var input2 = document.getElementById('ke');
   var autocomplete1 = new google.maps.places.Autocomplete(input1);
   var autocomplete2 = new google.maps.places.Autocomplete(input2);
-  palace1 = autocomplete1.getPlace();
-  palece2 = autocomplete2.getPlace();
+  place1 = autocomplete1.getPlace();
+  place2 = autocomplete2.getPlace();
   //Meke map with initial position semarang city
   var latlag = {lat: -7.0051453, lng: 110.4381254};
   var map = new google.maps.Map(document.getElementById('map'),{
@@ -36,10 +53,11 @@ function initMap(){
 }
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: //{lat: place1.geometry.location.lat(), lag: place1.geometry.location.lag()};//document.getElementById('dari').value,
-    destination: //{lat: place2.geometry.location.lat(), lag: place2.geometry.location.lag()};//document.getElementById('ke').value,
+    origin: document.getElementById('dari').value,
+    destination: document.getElementById('ke').value,
     travelMode: 'DRIVING'
-    }, function(response, status) {
+    },
+    function(response, status) {
       if (status === 'OK') {
         directionsDisplay.setDirections(response);
       }

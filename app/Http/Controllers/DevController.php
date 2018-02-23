@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class LoginController extends Controller
+class DevController extends Controller
 {
     //
-    function index(){
-      return view('login');
-    }
 }

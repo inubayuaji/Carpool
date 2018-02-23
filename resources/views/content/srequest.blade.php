@@ -1,0 +1,11 @@
+@extends('layouts.fream')
+@section('content')
+<div>
+  <table>
+    <tr>
+      <td></td>
+      <td>{{$order->dari}}</td>
+    </tr>
+  </table>
+</div>
+@endsection

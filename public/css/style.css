@@ -40,6 +40,7 @@ intup, textarea::placeholder{
 }
 /*Layout*/
 .aside{
+  display: none;
   box-sizing: border-box;
   float: left;
   position: fixed;
@@ -49,25 +50,20 @@ intup, textarea::placeholder{
 }
 .container{
   overflow: auto;
+  margin-left: 230px;
   padding-top: 50px;
 }
-.container-page{
-  overflow: auto;
-  padding-top: 50px;
-  margin: 0 130px 0 130px;
-}
-.container-page-x{
+.container-x{
   box-sizing: border-box;
   overflow: hidden;
-  height: 100vh;
-  padding-top: 50px;
-  margin: 0 130px 0 130px;
+  height: calc(100vh - 50px);
 }
 .navbar{
   box-sizing: border-box;
   position: fixed;
-  width: 100%;
+  width: calc(100% - 230px);
   height: 50px;
+  margin-left: 230px;
   background: #da251d;
 }
 .footer{
@@ -145,7 +141,7 @@ a:hover{
 }
 .user a{
   color: #ffffff;
-  padding: 15px 12px;
+  padding: 17px 12px;
   cursor: pointer;
 }
 .user a:hover, .notif a:hover{
@@ -155,20 +151,29 @@ a:hover{
 .notif-list{
   display: none;
   position: absolute;
-  top: 39px;
-  right: 83px;
-  width: 240px;
-  height: 200px;
-  background: #eeeeee;
+  top: 38px;
+  right: 87px;
+  width: 200px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 5px;
+  background: #838281;
 }
 .user-list{
   display: none;
   position: absolute;
-  top: 39px;
+  top: 38px;
   right: 0px;
-  width: 240px;
-  height: 200px;
-  background: #eeeeee;
+  width: 200px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  padding: 5px;
+  background: #838281;
+}
+.user-list a{
+  display: block;
+  font-size: 16px;
+  color: #ffffff;
 }
 .aside-banner{
   box-sizing: border-box;
@@ -198,6 +203,7 @@ a:hover{
   text-decoration: none;
   color: #ffffff;
   padding: 11px;
+  cursor: pointer;
 }
 .togle-menu:hover{
   background: #ffffff;
@@ -217,7 +223,7 @@ a:hover{
   color: #ffffff;
   padding: 15px 5px;
 }
-.nav a:hover{
+.nav a:hover,{
   background: #ffffff;
   color: #000000;
 }
@@ -243,10 +249,10 @@ form.login{
   box-sizing: border-box;
   box-shadow: 1px 1px 1px #000000;
   float: left;
-  width: 35%;
+  width: 400px;
   height: 100vh;
   padding: 10px;
-  border: solid 1px #838281;
+  border-right: solid 1px #838281;
 }
 .formulir select{
   -webkit-appearance: none;
@@ -277,7 +283,7 @@ form.login{
 .map{
   box-sizing: border-box;
   float: left;
-  width: 65%;
+  width: calc(100% - 400px);
   height: 100vh;
   background: #cccccc;
 }
@@ -344,4 +350,11 @@ form.login{
 }
 .show{
   display: block;
+}
+.full{
+  width: 100%;
+  margin-left: 0;
+}
+.cliked{
+  background: #838281;
 }

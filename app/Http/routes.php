@@ -10,16 +10,38 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+/*
 Route::get('/', 'LoginController@index');
-Route::get('admin', 'AdminController@index');
-Route::get('admin/permintaan', 'AdminController@permintaan');
-Route::get('admin/mobil', 'AdminController@mobil');
-Route::get('admin/log', 'AdminController@log');
-Route::get('member', 'MemberController@index');
-Route::post('member', 'MemberController@store');
-Route::get('member/order', 'MemberController@order');
-Route::get('member/mobil', 'MemberController@mobil');
+Route::get('admin', 'AdminController@index')->Middleware('auth');
+Route::get('admin/permintaan', 'AdminController@permintaan')->Middleware('auth');
+Route::get('admin/mobil', 'AdminController@mobil')->Middleware('auth');
+Route::get('admin/log', 'AdminController@log')->Middleware('auth');
+Route::get('member', 'MemberController@index')->Middleware('auth');
+Route::post('member', 'MemberController@store')->Middleware('auth');
+Route::get('member/order', 'MemberController@order')->Middleware('auth');
+Route::get('member/mobil', 'MemberController@mobil')->Middleware('auth');
+*/
+
+Route::get('/', function(){
+  return redirect('/login');
+});
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/dashboard/order', 'DashboardController@order');
+Route::post('/dashboard/order', 'DashboardController@storeOrder');
+Route::get('/dashboard/mobil', 'DashboardController@mobil');
+Route::post('/dashboard/mobil', 'DashboardController@storeMobil');
+Route::get('/dashboard/mobil/{plat_no}', 'DashboardController@showMobil');
+Route::get('/dashboard/request', 'DashboardController@req');
+Route::post('/dashboard/request', 'DashboardController@storeReq');
+Route::get('/dashboard/request/{id}', 'DashboardController@showReq');
+Route::get('/dashboard/log', 'DashboardController@log');
+Route::get('/dashboard/log/{id}', 'DashboardController@showLog');
+
+//helper untuk input saja
+Route::get('/dev/user', 'DevController@user');
+Route::get('/dev/mobil', 'DevController@mobil');
+Route::post('/dev/user', 'DevController@storeUser');
+Route::post('/dev/mobil', 'DevController@storeMobil');
 
 Route::auth();
 
