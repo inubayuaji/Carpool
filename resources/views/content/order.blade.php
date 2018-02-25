@@ -3,8 +3,9 @@
 <div class="container-x">
     <div class="formulir">
       <h1>Order</h1>
-      <form method="post" action="/member">
+      <form method="post" action="order">
         {{csrf_field()}}
+        <input type="hidden" name="nama" value="{{Auth::user()->name}}">
         <select name="keperluan">
           <option value="Rapat">Rapat</option>
           <option value="Jalan-jalan">Jalan-jalan</option>
@@ -14,7 +15,6 @@
           <option value="Mobil">Mobil</option>
           <option value="Mobil dan Supir">Mobil dan Supir</option>
         </select>
-        <input type="text" placeholder="Plat no Mobil" name="plat_no">
         <input type="text" id="dari" class="mg-t-20" placeholder="Dari" name="dari">
         <input type="text" id="ke" placeholder="Ke" name="ke">
         <input type="text" id="berangkat" class="tanggal mg-t-20" placeholder="Berangkat" name="tgl_berangkat">

@@ -8,11 +8,17 @@
   <div class="aside show" id="aside">
     <a href="#" class="aside-banner">Carpool</a>
       <ul class="nav-aside">
+      @if(Auth::user()->position == 'A')
         <li><a href="{{url('/dashboard/request')}}">Request</a></li>
+      @endif
         <li><a href="{{url('/dashboard/order')}}">Order</a></li>
-        <!--<li><a href="{{url('/dashboard/')}}">List Aprove</a></li>-->
+      @if(Auth::user()->position == 'O')
+        <li><a href="{{url('/dashboard/aproved')}}">List Aprove</a></li>
+      @endif
         <li><a href="{{url('/dashboard/mobil')}}">List Mobil</a></li>
+      @if(Auth::user()->position == 'A')
         <li><a href="{{url('/dashboard/log')}}">Log Permintaan</a></li>
+      @endif
       </ul>
   </div>
   <div class="navbar" id="navbar">
@@ -29,9 +35,12 @@
   <div class="container" id="container">
     @yield('content')
   </div>
-  <script type="text/javascript" src="{{asset('js/datepicker.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
+  @if(Request::path('dashboard/order') == 'dashboard/order')
+  <script type="text/javascript" src="{{asset('js/datepicker.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('js/order.js')}}"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDG-S-KJnHo18bDDZh1TExNLbFz4GEaKU&libraries=places&callback=initMap"></script>
+  @endif
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>
 </html>

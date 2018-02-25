@@ -9,9 +9,9 @@
     <h1 class="sub-title text-center">Untuk log in,masukkan NIP dan password dibawah:</h1>
     <form class="login mg-center mg-t-30" role="form" method="POST" action="{{url('/login')}}">
       {{csrf_field()}}
-      <input type="text" placeholder="NIP" class="mg-t-10 w-350p" name="email" value="{{old('email')}}"></input>
+      <input type="text" placeholder="Email" class="mg-t-10 w-350p" name="email" value="{{old('email')}}"></input>
       <input type="password" placeholder="Password" class="mg-t-10 w-350p" name="password"></input>
-      <button class="btn-red mg-t-10">Log In</button>
+      <input type="submit" class="btn-red mg-t-10" value="Log In">
     </form>
 </body>
 </html>

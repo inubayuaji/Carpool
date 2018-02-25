@@ -16,10 +16,10 @@ class CreateCarsTable extends Migration
         Schema::create('cars', function(Blueprint $table){
           $table->string('plat_no')->unique();
           $table->string('rakitan');
-          $table->string('type');
+          $table->string('tipe');
           $table->string('tgl_beli');
           $table->string('kon_mesin');
-          $table->string('dipinjam');
+          $table->string('status');
           $table->timestamps();
         });
     }

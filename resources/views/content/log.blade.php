@@ -5,15 +5,23 @@
       <tr>
         <th>Peminjam</th>
         <th>Pemberi Ijin</th>
-        <th>Berangkat</th>
-        <th>Pulang</th>
+        <th>Dari</th>
+        <th>Tujuan</th>
+        <th>Satatus</th>
+        <th>Detail</th>
       </tr>
       @foreach ($logs as $log)
         <tr>
-          <td>{{$log->request_name}}</td>
-          <td>{{$log->supervisior_name}}</td>
-          <td>{{$log->tgl_pergi}}</td>
-          <td>{{$log->tgl_pulang}}</td>
+          <td>{{$log->nama_peminjam}}</td>
+          <td>{{$log->nama_pengijin}}</td>
+          <td>{{$log->dari}}</td>
+          <td>{{$log->ke}}</td>
+          @if($log->status == 'A')
+          <td>Aprove</td>
+          @else
+          <td>Decline</td>
+          @endif
+          <td><a href="{{url('/dashboard/log', [$log->id])}}">Detail</a></td>
         </tr>
       @endforeach
     </table>

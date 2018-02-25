@@ -15,9 +15,12 @@ class CreateLogsTable extends Migration
         //
         Schema::create('logs', function(Blueprint $table){
           $table->increments('id');
-          $table->string('request_name');
-          $table->string('supervisior_name');
-          $table->string('tgl_pergi');
+          $table->string('nama_peminjam');
+          $table->string('nama_pengijin');
+          $table->string('keperluan');
+          $table->string('dari');
+          $table->string('ke');
+          $table->string('tgl_perg');
           $table->string('tgl_pulang');
           $table->string('status');
           $table->timestamps();

@@ -1,6 +1,7 @@
 @extends('layouts.fream')
 @section('content')
   <div>
+    <h1>Detail Mobil</h1>
     <table>
       <tr>
         <td>Plat No:</td>
@@ -12,7 +13,7 @@
       </tr>
       <tr>
         <td>Type:</td>
-        <td>{{$car->type}}</td>
+        <td>{{$car->tipe}}</td>
       </tr>
       <tr>
         <td>Keluaran:</td>
@@ -21,10 +22,6 @@
       <tr>
         <td>Kondisi Mesin:</td>
         <td>{{$car->kon_mesin}}</td>
-      </tr>
-      <tr>
-        <td>Gambar</td>
-        <td><img src="" alt="mobil"></td>
       </tr>
     </table>
   </div>

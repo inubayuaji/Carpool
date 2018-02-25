@@ -15,15 +15,15 @@ class CreateOrdersTable extends Migration
         //
         Schema::create('orders', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('name');
+          $table->string('nama');
           $table->string('keperluan');
           $table->string('jns_pinjaman');
-          $table->string('plat_no');
           $table->string('dari');
           $table->string('ke');
           $table->string('tgl_berangkat');
           $table->string('tgl_pulang');
           $table->string('alasan');
+          $table->string('status');
           $table->timestamps();
         });
 

@@ -31,12 +31,15 @@ Route::post('/dashboard/order', 'DashboardController@storeOrder');
 Route::get('/dashboard/mobil', 'DashboardController@mobil');
 Route::post('/dashboard/mobil', 'DashboardController@storeMobil');
 Route::get('/dashboard/mobil/{plat_no}', 'DashboardController@showMobil');
+Route::get('/dashboard/mobil/edit/{plat_no}', 'DashboardController@editMobil');
 Route::get('/dashboard/request', 'DashboardController@req');
-Route::post('/dashboard/request', 'DashboardController@storeReq');
+Route::get('/dashboard/request/{nama}/a/{id}', ['as'=>'aprove', 'uses'=>'DashboardController@aprove']);
+Route::get('/dashboard/request/{nama}/d/{id}', ['as'=>'decline', 'uses'=>'DashboardController@decline']);
+//Route::post('/dashboard/request', 'DashboardController@storeReq');
 Route::get('/dashboard/request/{id}', 'DashboardController@showReq');
 Route::get('/dashboard/log', 'DashboardController@log');
 Route::get('/dashboard/log/{id}', 'DashboardController@showLog');
-
+Route::get('/dashboard/aproved/', 'DashboardController@aproved');
 //helper untuk input saja
 Route::get('/dev/user', 'DevController@user');
 Route::get('/dev/mobil', 'DevController@mobil');
